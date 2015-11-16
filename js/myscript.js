@@ -26,8 +26,8 @@ var getLiveStreams = function(){
 		liveStreamsData[4].percentage = 100 - (firstFourSum);
 		d3.selectAll("#streams div")
 		    .data(liveStreamsData)
-		    .transition()
-		    .duration(2000)
+		    // .transition()
+		    // .duration(2000)
 		    .style("width", function(d) { return  d.percentage + '%' })
 		    .style("background-image", function(d) { return "url('" + d.preview + "')" })
 
@@ -73,8 +73,8 @@ var getTopGames = function(){
 		topGamesData[4].percentage = 100 - (firstFourSum);
 		d3.selectAll("#games div")
 		    .data(topGamesData)
-		    .transition()
-		    .duration(2000)
+		    // .transition()
+		    // .duration(2000)
 		    .style("width", function(d) { return  d.percentage + '%' })
 		    .style("background-image", function(d) { return "url('" + d.preview + "')" })
 		
@@ -122,8 +122,8 @@ var getMostViewed = function(){
 		mostViewedData[4].percentage = 100 - (firstFourSum);
 		d3.selectAll("#viewed div")
 		    .data(mostViewedData)
-		    .transition()
-		    .duration(2000)
+		    // .transition()
+		    // .duration(2000)
 		    .style("width", function(d) { return  d.percentage + '%' })
 		    .style("background-image", function(d) { return "url('" + d.preview + "')" })
 		
@@ -142,10 +142,11 @@ var getMostViewed = function(){
 };
 
 $(document).ready(function(){
-	// var ls = setInterval(getLiveStreams, 2000);
-	// var tg = setInterval(getTopGames, 2000);
-	// var mv = setInterval(getMostViewed, 2000);
-	getTopGames();
-	getLiveStreams();
-	getMostViewed();
+	var ls = setInterval(getLiveStreams, 2000);
+	var tg = setInterval(getTopGames, 2000);
+	var mv = setInterval(getMostViewed, 2000);
+
+	// getTopGames();
+	// getLiveStreams();
+	// getMostViewed();
 });
